@@ -80,9 +80,10 @@
             const numberb1=parseFloat(document.getElementById('numberb1').value);
             const numberb2=parseFloat(document.getElementById('numberb2').value);
             const result=(numbera1*numberb1)+((numbera1*numberb2)+(numbera2*numberb1))/12;
-            document.getElementById('result').innerText="Result : "+Math.trunc(result);
+            document.getElementById('result').innerText="Result : "+Math.round(result);
         }
     </script>
 </body>
 
 </html>
+
