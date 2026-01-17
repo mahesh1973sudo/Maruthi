@@ -13,12 +13,9 @@
             display: flex;
             flex-direction: column;
             width: 340px;
-            margin: 10px;
             padding: 10px 0px;
             justify-content: center;
             align-items: center;
-            box-shadow: 0px 0px 8px rgb(149, 152, 149);
-            border-radius: 20px;
             font-size: 18px;
         }
         .header{
@@ -26,8 +23,16 @@
             justify-content: center;
             align-items: center;
         }
+        
         .header h2{
-            margin: 10px;
+            margin: 6px;
+        }
+        hr{
+            border: 1px solid rgb(90, 89, 89);
+            width: 100%;
+        }
+        p{
+            margin: 6px;
         }
         #calculate{
             width: 160px;
@@ -39,6 +44,8 @@
             background-color: rgb(4, 192, 29);
             font-size: 16px;
             font-weight: bold;
+            
+            margin-right: 10px;
         }
         #calculate:hover{
             opacity: 0.9;
@@ -72,6 +79,23 @@
         <div class="result">
             <p id="result"></p>
         </div>
+        <hr>
+        <div class="header">
+            <h2>Shiva</h2>
+            </div>
+        <div>
+            <p> Enter First Number</p>
+            <input id="numbers1" type="number" placeholder="Enter 1st number">
+        </div>
+        <div>
+            <p> Enter Second Number</p>
+            <input id="numbers2" type="number" placeholder="Enter 2nd number">
+        </div>
+        <button id="calculate" onclick="square()">Calculate</button>
+        <div class="results">
+            <p id="results"></p>
+        </div>
+
     </div>
     <script>
         function calculate(){
@@ -80,10 +104,15 @@
             const numberb1=parseFloat(document.getElementById('numberb1').value);
             const numberb2=parseFloat(document.getElementById('numberb2').value);
             const result=(numbera1*numberb1)+((numbera1*numberb2)+(numbera2*numberb1))/12;
-            document.getElementById('result').innerText="Result : "+Math.round(result);
+            document.getElementById('result').innerText="Result : "+result;
+        }
+        function square(){
+            const numbers1=parseFloat(document.getElementById('numbers1').value);
+            const numbers2=parseFloat(document.getElementById('numbers2').value);
+            const result=Math.sqrt((numbers1*numbers1)+(numbers2*numbers2));
+            document.getElementById('results').innerText="Result : "+result;
         }
     </script>
 </body>
 
 </html>
-
